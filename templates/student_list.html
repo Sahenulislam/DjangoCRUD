@@ -1,0 +1,68 @@
+<!-- student_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+<style>
+body, h1, table, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/* Center align the heading */
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+/* Style the table */
+table {
+    width: 100%; /* Make the table full-width */
+    border-collapse: collapse; /* Collapse table borders */
+    border-spacing: 0; /* Remove any spacing between table cells */
+}
+
+/* Style table header */
+thead {
+    background-color: #f2f2f2; /* Light gray background */
+}
+
+th, td {
+    padding: 10px; /* Add padding to cells */
+    border: 1px solid #ddd; /* Add border to cells */
+    text-align: left; /* Left align cell content */
+}
+
+/* Style alternating rows */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light alternate row background */
+}
+</style>
+</head>
+<body>
+    <h1>Student List</h1>
+    
+    <table border="10">
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Student Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <th>{{ student.student_id }}</th>
+                    <td>{{ student.student_name }}</td>
+                    <td>{{ student.student_phone }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
